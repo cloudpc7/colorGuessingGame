@@ -35,7 +35,7 @@
 
             do {
                 const colors = COLORS_ARRAY.join(', ');
-                guess = prompt(`I am thinking of one of these colors:\n\n ${colors}\n\n What color am I thinkig of ?\n`);
+                guess = prompt(`I am thinking of one of these colors:\n\n ${colors}\n\n What color am I thinkig of?\n`);
                 if(guess === null) return;
                 numTries++;
                 correct = checkGuess(guess, target); // instructions given to player while the guess is not equal to the target.
@@ -43,9 +43,9 @@
 
             let NUMBER_OF_TRIES_MESSAGE = `It took you ${numTries} guesses to finish the game!`; // let number of tries needs to be after do while loop or numTries will reset itself to 0.
             const ANSWER_CORRECT_MESSAGE = 'Congratulations! You have guessed the color!';
-            const colorBackgroundMessage = `Hit OK to see the color in the background`;
-
+            const colorBackgroundMessage = `Hit OK to see the color in the background.`;
             alert(`${ANSWER_CORRECT_MESSAGE}\n\n${NUMBER_OF_TRIES_MESSAGE}\n\n${colorBackgroundMessage}`); // provide a message to display when user wins.
+            document.body.style.background = guess;
         }
 
         const checkGuess = (guess, target) => { // create a function to verify if the guess and the target are the same.
@@ -58,9 +58,9 @@
             if(!COLORS_ARRAY.includes(guess)) { // provided  an if statement if the color array does not include the guessed color. 
                 alert(COLOR_NOT_FOUND); 
             } else if (guess > target) {
-                alert("Your guess is higher than the target."); // provide the alerts if guesses are higher or lower
+                alert(`${COLOR_HIGHER}`); // provide the alerts if guesses are higher or lower
             } else if (guess < target) {
-                alert("Your guess is lower than the target");
+                alert(`${COLOR_LOWER}`);
             } else {
                 correct = true;
             }
