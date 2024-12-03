@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/cloudpc7/colorGuessingGame#readme",
   "dependencies": {
-    "bootstrap": "^5.3.3"
+    "bootstrap": "^5.3.3",
+    "color-guessing-game": "file:"
   }
 }
